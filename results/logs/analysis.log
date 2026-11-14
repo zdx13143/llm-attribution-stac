@@ -1,0 +1,34 @@
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  29%|██▉       | 40/136 [00:00<00:00, 378.42it/s]Loading weights:  57%|█████▋    | 78/136 [00:00<00:00, 364.00it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 478.22it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+验证集 23953 条 | 均衡准确率 0.8317
+
+K=2 子集 10926 条 | 均衡准确率 0.8350
+
+=== 最难识别的 6 个模型（召回率最低）===
+  gemini-3.7-flash         召回 0.636  (n=489)
+  kimi-k3                  召回 0.653  (n=1388)
+  gemini-3.8-flash         召回 0.669  (n=459)
+  glm-5.3                  召回 0.709  (n=567)
+  claude-fable-5           召回 0.712  (n=932)
+  gemini-3.6-flash         召回 0.774  (n=482)
+
+=== 最常被混淆的配对（真实→误判，前 8）===
+  kimi-k3                  → glm-5.3                  157 次
+  gpt-5.6-sol              → gpt-5.6-luna             150 次
+  gemini-3.7-flash         → gemini-3.8-flash         121 次
+  gemini-3.8-flash         → gemini-3.7-flash         119 次
+  kimi-k3                  → claude-fable-5           117 次
+  claude-opus-4-8          → claude-fable-5           112 次
+  gpt-5.6-luna             → gpt-5.6-sol              96 次
+  claude-fable-5           → kimi-k3                  90 次
+
+已存 C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\cm.npy 和 analysis.json

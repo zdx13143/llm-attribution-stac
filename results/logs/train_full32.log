@@ -1,0 +1,15 @@
+device=cuda | train 96993 | val 23953 → K=2 10926
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 25/136 [00:00<00:00, 239.52it/s]Loading weights:  36%|███▌      | 49/136 [00:00<00:00, 227.75it/s]Loading weights:  53%|█████▎    | 72/136 [00:00<00:00, 223.04it/s]Loading weights:  70%|██████▉   | 95/136 [00:00<00:00, 225.16it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 272.06it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+C:\Python314\Lib\site-packages\torch\nn\modules\module.py:1369: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\c10/cuda/CUDAAllocatorConfig.h:40.)
+  return t.to(
+  ep0 step 1/9093 loss 3.0998 16.58s/step eta 2512min 2.3GB

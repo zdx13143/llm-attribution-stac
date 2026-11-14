@@ -1,0 +1,40 @@
+已用 mmap 数据
+device=cuda | train 96993 | val 23953 → K=2 10926
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 16/136 [00:00<00:00, 150.88it/s]Loading weights:  32%|███▏      | 44/136 [00:00<00:00, 220.05it/s]Loading weights:  49%|████▉     | 67/136 [00:00<00:00, 167.80it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 309.42it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  ep0 400/6062 loss 2.2575 2.62s/step
+  [ckpt] 已保存 step 500
+  ep0 800/6062 loss 1.8162 2.60s/step
+  [ckpt] 已保存 step 1000
+  ep0 1200/6062 loss 1.5730 2.59s/step
+  [ckpt] 已保存 step 1500
+  ep0 1600/6062 loss 1.4168 2.59s/step
+  ep0 2000/6062 loss 1.3066 2.60s/step
+  [ckpt] 已保存 step 2000
+  ep0 2400/6062 loss 1.2112 2.61s/step
+  [ckpt] 已保存 step 2500
+  ep0 2800/6062 loss 1.1394 2.58s/step
+  [ckpt] 已保存 step 3000
+  ep0 3200/6062 loss 1.0757 2.59s/step
+  [ckpt] 已保存 step 3500
+  ep0 3600/6062 loss 1.0230 2.61s/step
+  ep0 4000/6062 loss 0.9775 2.54s/step
+  [ckpt] 已保存 step 4000
+  ep0 4400/6062 loss 0.9361 2.48s/step
+  [ckpt] 已保存 step 4500
+  ep0 4800/6062 loss 0.9017 2.43s/step
+  [ckpt] 已保存 step 5000
+  ep0 5200/6062 loss 0.8694 2.37s/step
+  [ckpt] 已保存 step 5500
+  ep0 5600/6062 loss 0.8396 2.32s/step
+  ep0 6000/6062 loss 0.8134 2.27s/step
+  [ckpt] 已保存 step 6000

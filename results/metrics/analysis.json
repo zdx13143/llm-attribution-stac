@@ -1,0 +1,101 @@
+{
+  "ba_all": 0.8317058713119493,
+  "ba_k2": 0.8350438183932423,
+  "recall": {
+    "gpt-5.5": 0.9040852575488455,
+    "gpt-5.6-luna": 0.8418674698795181,
+    "gpt-5.6-sol": 0.8410548823948681,
+    "gpt-5.6-terra": 0.8581436077057794,
+    "gpt-6-astra": 0.9702479338842975,
+    "gemini-3.1-pro-preview": 0.9630606860158312,
+    "gemini-3.6-flash": 0.7738589211618258,
+    "gemini-3.7-flash": 0.6359918200408998,
+    "gemini-3.8-flash": 0.6688453159041394,
+    "claude-fable-5": 0.7124463519313304,
+    "claude-opus-4-6": 0.9467636920720031,
+    "claude-opus-4-8": 0.9278109028960818,
+    "claude-opus-5": 0.9254937163375224,
+    "claude-sonnet-5": 0.8783382789317508,
+    "qwen3.8-max": 0.8254901960784313,
+    "glm-5.3": 0.708994708994709,
+    "glm-5.3-flash": 0.9354741896758704,
+    "kimi-k3": 0.6527377521613833
+  },
+  "top_confusions": [
+    {
+      "n": 157,
+      "true": "kimi-k3",
+      "pred": "glm-5.3"
+    },
+    {
+      "n": 150,
+      "true": "gpt-5.6-sol",
+      "pred": "gpt-5.6-luna"
+    },
+    {
+      "n": 121,
+      "true": "gemini-3.7-flash",
+      "pred": "gemini-3.8-flash"
+    },
+    {
+      "n": 119,
+      "true": "gemini-3.8-flash",
+      "pred": "gemini-3.7-flash"
+    },
+    {
+      "n": 117,
+      "true": "kimi-k3",
+      "pred": "claude-fable-5"
+    },
+    {
+      "n": 112,
+      "true": "claude-opus-4-8",
+      "pred": "claude-fable-5"
+    },
+    {
+      "n": 96,
+      "true": "gpt-5.6-luna",
+      "pred": "gpt-5.6-sol"
+    },
+    {
+      "n": 90,
+      "true": "claude-fable-5",
+      "pred": "kimi-k3"
+    },
+    {
+      "n": 89,
+      "true": "gpt-5.6-luna",
+      "pred": "gpt-5.6-terra"
+    },
+    {
+      "n": 84,
+      "true": "claude-opus-4-8",
+      "pred": "kimi-k3"
+    },
+    {
+      "n": 80,
+      "true": "glm-5.3-flash",
+      "pred": "glm-5.3"
+    },
+    {
+      "n": 80,
+      "true": "gemini-3.6-flash",
+      "pred": "gemini-3.7-flash"
+    },
+    {
+      "n": 68,
+      "true": "gpt-5.6-terra",
+      "pred": "gpt-5.6-luna"
+    },
+    {
+      "n": 65,
+      "true": "gpt-5.5",
+      "pred": "gpt-5.6-terra"
+    },
+    {
+      "n": 58,
+      "true": "glm-5.3",
+      "pred": "kimi-k3"
+    }
+  ]
+}

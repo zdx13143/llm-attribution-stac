@@ -1,0 +1,82 @@
+device=cuda | train 96993 | val 23953 → K=2 10926 | steps 6062 | s=30.0 m=0.2
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  15%|█▍        | 20/136 [00:00<00:00, 181.89it/s]Loading weights:  35%|███▍      | 47/136 [00:00<00:00, 228.57it/s]Loading weights:  51%|█████▏    | 70/136 [00:00<00:00, 227.79it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 429.94it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+从预训练权重开始（与基线一致）
+已开启梯度检查点
+不使用类别平衡采样（与基线一致）
+前 600 步冻结骨干，只训新头
+C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\src\research\train_arcface.py:211: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+  1/6062 loss 9.1221 3.78s/step eta 382min 0.7GB
+  100/6062 loss 9.2406 3.22s/step eta 320min 0.7GB
+  200/6062 loss 18.1501 3.24s/step eta 316min 0.7GB
+  300/6062 loss 8.7715 3.25s/step eta 312min 0.7GB
+  400/6062 loss 17.4316 3.26s/step eta 308min 0.7GB
+  500/6062 loss 8.5833 3.27s/step eta 303min 0.7GB
+  600/6062 loss 17.0640 3.27s/step eta 298min 0.7GB
+step 600: 解冻骨干，开始全量微调
+  700/6062 loss 7.7578 3.34s/step eta 299min 2.3GB
+  800/6062 loss 14.9280 3.40s/step eta 298min 2.3GB
+  900/6062 loss 6.7368 3.44s/step eta 296min 2.3GB
+  1000/6062 loss 13.0341 3.48s/step eta 293min 2.3GB
+  1100/6062 loss 6.0498 3.51s/step eta 290min 2.3GB
+  1200/6062 loss 11.8098 3.54s/step eta 287min 2.3GB
+  1300/6062 loss 5.7019 3.56s/step eta 283min 2.3GB
+  1400/6062 loss 11.3267 3.58s/step eta 278min 2.3GB
+  1500/6062 loss 5.2839 3.59s/step eta 273min 2.3GB
+  1600/6062 loss 10.2622 3.60s/step eta 268min 2.3GB
+  1700/6062 loss 4.6670 3.61s/step eta 263min 2.3GB
+  1800/6062 loss 9.2987 3.62s/step eta 257min 2.3GB
+  1900/6062 loss 4.4697 3.63s/step eta 252min 2.3GB
+  2000/6062 loss 8.8717 3.64s/step eta 246min 2.3GB
+  2100/6062 loss 4.3144 3.65s/step eta 241min 2.3GB
+  2200/6062 loss 8.8082 3.65s/step eta 235min 2.3GB
+  2300/6062 loss 4.0933 3.66s/step eta 229min 2.3GB
+  2400/6062 loss 8.3007 3.67s/step eta 224min 2.3GB
+  2500/6062 loss 4.0884 3.67s/step eta 218min 2.3GB
+  2600/6062 loss 8.1548 3.67s/step eta 212min 2.3GB
+  2700/6062 loss 3.6813 3.68s/step eta 206min 2.3GB
+  2800/6062 loss 7.5797 3.68s/step eta 200min 2.3GB
+  2900/6062 loss 3.8421 3.68s/step eta 194min 2.3GB
+  3000/6062 loss 7.6562 3.69s/step eta 188min 2.3GB
+  3100/6062 loss 3.6519 3.69s/step eta 182min 2.3GB
+  3200/6062 loss 7.4022 3.69s/step eta 176min 2.3GB
+  3300/6062 loss 3.5153 3.70s/step eta 170min 2.3GB
+  3400/6062 loss 7.0446 3.70s/step eta 164min 2.3GB
+  3500/6062 loss 3.5198 3.70s/step eta 158min 2.3GB
+  3600/6062 loss 6.9739 3.71s/step eta 152min 2.3GB
+  3700/6062 loss 3.4342 3.71s/step eta 146min 2.3GB
+  3800/6062 loss 6.6294 3.71s/step eta 140min 2.3GB
+  3900/6062 loss 3.3515 3.71s/step eta 134min 2.3GB
+  4000/6062 loss 6.7018 3.71s/step eta 127min 2.3GB
+  4100/6062 loss 3.1761 3.71s/step eta 121min 2.3GB
+  4200/6062 loss 6.3044 3.71s/step eta 115min 2.3GB
+  4300/6062 loss 2.9789 3.71s/step eta 109min 2.3GB
+  4400/6062 loss 6.0185 3.71s/step eta 103min 2.3GB
+  4500/6062 loss 3.0155 3.71s/step eta 97min 2.3GB
+  4600/6062 loss 6.0226 3.71s/step eta 90min 2.3GB
+  4700/6062 loss 3.0455 3.69s/step eta 84min 2.3GB
+  4800/6062 loss 5.9251 3.69s/step eta 78min 2.3GB
+  4900/6062 loss 2.9593 3.68s/step eta 71min 2.3GB
+  5000/6062 loss 5.9874 3.67s/step eta 65min 2.3GB
+  5100/6062 loss 2.9940 3.67s/step eta 59min 2.3GB
+  5200/6062 loss 5.7382 3.66s/step eta 53min 2.3GB
+  5300/6062 loss 2.8624 3.65s/step eta 46min 2.3GB
+  5400/6062 loss 5.5496 3.64s/step eta 40min 2.3GB
+  5500/6062 loss 2.5114 3.64s/step eta 34min 2.3GB
+  5600/6062 loss 5.3258 3.64s/step eta 28min 2.3GB
+  5700/6062 loss 2.5186 3.63s/step eta 22min 2.3GB
+  5800/6062 loss 4.9874 3.62s/step eta 16min 2.3GB
+  5900/6062 loss 2.5686 3.61s/step eta 10min 2.3GB
+  6000/6062 loss 5.2464 3.61s/step eta 4min 2.3GB
+已保存最终权重 → C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\ckpt\f0_arcA_final
+跳过评估（--no-eval），请用 eval_arc.py 单独打分

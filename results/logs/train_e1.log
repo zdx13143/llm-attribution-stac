@@ -1,0 +1,31 @@
+device=cuda | train 96993 | val 23953 → K=2 10926
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 18/136 [00:00<00:00, 154.76it/s]Loading weights:  27%|██▋       | 37/136 [00:00<00:00, 171.42it/s]Loading weights:  45%|████▍     | 61/136 [00:00<00:00, 196.18it/s]Loading weights:  65%|██████▌   | 89/136 [00:00<00:00, 224.56it/s]Loading weights:  82%|████████▏ | 112/136 [00:00<00:00, 216.74it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 223.88it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  ep0 step 1/3031 loss 3.0998 2.24s/step eta 113min 2.3GB
+  ep0 step 200/3031 loss 1.9699 1.63s/step eta 77min 2.3GB
+  ep0 step 400/3031 loss 1.1089 1.69s/step eta 74min 2.3GB
+  ep0 step 600/3031 loss 1.0671 1.67s/step eta 68min 2.3GB
+  ep0 step 800/3031 loss 0.8965 1.67s/step eta 62min 2.3GB
+  ep0 step 1000/3031 loss 0.8591 1.71s/step eta 58min 2.3GB
+  ep0 step 1200/3031 loss 0.6494 1.72s/step eta 53min 2.3GB
+  ep0 step 1400/3031 loss 0.7604 1.74s/step eta 47min 2.3GB
+  ep0 step 1600/3031 loss 0.2532 1.75s/step eta 42min 2.3GB
+  ep0 step 1800/3031 loss 0.6178 1.75s/step eta 36min 2.3GB
+  ep0 step 2000/3031 loss 0.7080 1.76s/step eta 30min 2.3GB
+  ep0 step 2200/3031 loss 0.3639 1.75s/step eta 24min 2.3GB
+  ep0 step 2400/3031 loss 0.8150 1.75s/step eta 18min 2.3GB
+  ep0 step 2600/3031 loss 0.7033 1.74s/step eta 13min 2.3GB
+  ep0 step 2800/3031 loss 0.3688 1.73s/step eta 7min 2.3GB
+  ep0 step 3000/3031 loss 0.6021 1.74s/step eta 1min 2.3GB
+
+=== fold 0 | 1.0 ep | 107.1 分钟 ===
+  K=2 0.8134 | K=all 0.7973

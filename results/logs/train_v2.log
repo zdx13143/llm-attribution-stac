@@ -1,0 +1,41 @@
+device=cuda | train 96993 | val 23953 → K=2 10926
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  23%|██▎       | 31/136 [00:00<00:00, 308.76it/s]Loading weights:  60%|█████▉    | 81/136 [00:00<00:00, 416.21it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 463.66it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  ep0 400/3031 loss 2.1257 1.67s/step
+  ep0 800/3031 loss 1.6873 1.70s/step
+  ep0 1200/3031 loss 1.4412 1.87s/step
+  ep0 1600/3031 loss 1.2931 1.93s/step
+  ep0 2000/3031 loss 1.1886 1.99s/step
+  ep0 2400/3031 loss 1.1073 2.01s/step
+  ep0 2800/3031 loss 1.0438 2.04s/step
+=== ep1: train_loss 1.0111 | K=2 0.7708 | K=all 0.7680 | 126min ===
+  ↑ 保存最优 → C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\ckpt\f0_3ep_best
+  ep1 400/3031 loss 0.4713 2.45s/step
+  ep1 800/3031 loss 0.4810 2.42s/step
+  ep1 1200/3031 loss 0.4671 2.39s/step
+  ep1 1600/3031 loss 0.4591 2.37s/step
+  ep1 2000/3031 loss 0.4493 2.34s/step
+  ep1 2400/3031 loss 0.4435 2.32s/step
+  ep1 2800/3031 loss 0.4350 2.31s/step
+=== ep2: train_loss 0.4310 | K=2 0.8200 | K=all 0.7998 | 254min ===
+  ↑ 保存最优 → C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\ckpt\f0_3ep_best
+  ep2 400/3031 loss 0.2035 2.49s/step
+  ep2 800/3031 loss 0.2084 2.47s/step
+  ep2 1200/3031 loss 0.2054 2.46s/step
+  ep2 1600/3031 loss 0.2020 2.45s/step
+  ep2 2000/3031 loss 0.1972 2.45s/step
+  ep2 2400/3031 loss 0.1921 2.43s/step
+  ep2 2800/3031 loss 0.1891 2.43s/step
+=== ep3: train_loss 0.1867 | K=2 0.8350 | K=all 0.8317 | 389min ===
+  ↑ 保存最优 → C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\ckpt\f0_3ep_best
+
+最优 K=2 = 0.8350

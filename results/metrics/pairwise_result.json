@@ -1,0 +1,50 @@
+{
+  "base_all": 0.8275507473053425,
+  "base_k2": 0.8380217641131544,
+  "fix_all": 0.8045593870724422,
+  "fix_k2": 0.8262322168175986,
+  "changed": 796,
+  "n_b": 11742,
+  "pairs": [
+    {
+      "a": "kimi-k3",
+      "b": "glm-5.3",
+      "n": 157
+    },
+    {
+      "a": "gpt-5.6-sol",
+      "b": "gpt-5.6-luna",
+      "n": 150
+    },
+    {
+      "a": "gemini-3.7-flash",
+      "b": "gemini-3.8-flash",
+      "n": 121
+    },
+    {
+      "a": "gemini-3.8-flash",
+      "b": "gemini-3.7-flash",
+      "n": 119
+    },
+    {
+      "a": "claude-opus-4-8",
+      "b": "claude-fable-5",
+      "n": 112
+    },
+    {
+      "a": "gpt-5.6-luna",
+      "b": "gpt-5.6-sol",
+      "n": 96
+    },
+    {
+      "a": "claude-fable-5",
+      "b": "kimi-k3",
+      "n": 90
+    },
+    {
+      "a": "glm-5.3-flash",
+      "b": "glm-5.3",
+      "n": 80
+    }
+  ]
+}

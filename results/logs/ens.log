@@ -1,0 +1,34 @@
+K=2 子集 10926 条
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  18%|█▊        | 24/136 [00:00<00:00, 239.94it/s]Loading weights:  46%|████▋     | 63/136 [00:00<00:00, 314.46it/s]Loading weights:  71%|███████   | 96/136 [00:00<00:00, 314.34it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 398.14it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  CE     : 0.8421
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 35/136 [00:00<00:00, 346.23it/s]Loading weights:  52%|█████▏    | 71/136 [00:00<00:00, 326.57it/s]Loading weights:  78%|███████▊  | 106/136 [00:00<00:00, 336.12it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 424.48it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  ArcFace: 0.8330
+
+=== 概率平均 ===
+  CE 0.3 + ArcFace 0.7 : 0.8361
+  CE 0.4 + ArcFace 0.6 : 0.8370
+  CE 0.5 + ArcFace 0.5 : 0.8421
+  CE 0.6 + ArcFace 0.4 : 0.8459
+  CE 0.7 + ArcFace 0.3 : 0.8488
+
+错误重叠：CE 错 847 | ArcFace 错 1111 | 同时错 712 | 仅 CE 错 135 | 仅 ArcFace 错 399

@@ -1,0 +1,20 @@
+device=cuda | train 96993 | val 23953 → K=2 10926 | steps 300 | s=30.0 m=0.3
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  21%|██        | 28/136 [00:00<00:00, 278.86it/s]Loading weights:  45%|████▍     | 61/136 [00:00<00:00, 299.69it/s]Loading weights:  68%|██████▊   | 92/136 [00:00<00:00, 303.81it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 342.04it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+已开启梯度检查点
+已热启动骨干：data/research/ckpt/f0_L1024_step
+C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\src\research\train_arcface.py:189: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+  1/300 loss 11.9765 3.40s/step eta 17min 1.2GB
+  100/300 loss 8.7266 2.55s/step eta 8min 2.3GB
+  200/300 loss 15.2233 2.57s/step eta 4min 2.3GB
+  300/300 loss 5.4907 2.54s/step eta 0min 2.3GB

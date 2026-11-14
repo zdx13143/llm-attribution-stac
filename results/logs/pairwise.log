@@ -1,0 +1,28 @@
+fold0 拆半：A(训二元头) 12211 | B(评估) 11742
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 35/136 [00:00<00:00, 318.10it/s]Loading weights:  49%|████▉     | 67/136 [00:00<00:00, 240.72it/s]Loading weights:  70%|██████▉   | 95/136 [00:00<00:00, 255.50it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 354.36it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+对 B 半推理...
+基线：K=all 0.8276 | K=2 0.8380
+
+目标配对：kimi-k3↔glm-5.3, gpt-5.6-sol↔gpt-5.6-luna, gemini-3.7-flash↔gemini-3.8-flash, gemini-3.8-flash↔gemini-3.7-flash, claude-opus-4-8↔claude-fable-5, gpt-5.6-luna↔gpt-5.6-sol, claude-fable-5↔kimi-k3, glm-5.3-flash↔glm-5.3
+  kimi-k3               ↔glm-5.3                n=  966 训练集内准确 0.810
+  gpt-5.6-sol           ↔gpt-5.6-luna           n= 1414 训练集内准确 0.873
+  gemini-3.7-flash      ↔gemini-3.8-flash       n=  490 训练集内准确 0.724
+  gemini-3.8-flash      ↔gemini-3.7-flash       n=  490 训练集内准确 0.724
+  claude-opus-4-8       ↔claude-fable-5         n= 2891 训练集内准确 0.915
+  gpt-5.6-luna          ↔gpt-5.6-sol            n= 1414 训练集内准确 0.873
+  claude-fable-5        ↔kimi-k3                n= 1157 训练集内准确 0.844
+  glm-5.3-flash         ↔glm-5.3                n= 1949 训练集内准确 0.878
+
+修补后：K=all 0.8046 | K=2 0.8262
+改判 796 / 11742 条 (6.8%)
+增量：K=all -0.0230 | K=2 -0.0118

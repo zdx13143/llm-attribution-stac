@@ -1,0 +1,15 @@
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 16/136 [00:00<00:00, 158.30it/s]Loading weights:  24%|██▎       | 32/136 [00:00<00:01, 84.18it/s] Loading weights:  33%|███▎      | 45/136 [00:00<00:00, 94.41it/s]Loading weights:  41%|████      | 56/136 [00:00<00:01, 68.94it/s]Loading weights:  49%|████▉     | 67/136 [00:00<00:00, 76.77it/s]Loading weights:  56%|█████▌    | 76/136 [00:00<00:00, 70.97it/s]Loading weights:  65%|██████▌   | 89/136 [00:01<00:00, 78.28it/s]Loading weights:  72%|███████▏  | 98/136 [00:01<00:00, 57.19it/s]Loading weights:  77%|███████▋  | 105/136 [00:01<00:00, 49.64it/s]Loading weights: 100%|██████████| 136/136 [00:01<00:00, 85.34it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.bias   | MISSING    | 
+classifier.weight | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  K=all: 0.8296  (n=23953)
+  K=2: 0.8421  (n=10926)
+
+权重来自 data/research/ckpt/f0_L1024_step

@@ -1,0 +1,16 @@
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  24%|██▍       | 33/136 [00:00<00:00, 322.05it/s]Loading weights:  49%|████▉     | 67/136 [00:00<00:00, 320.46it/s]Loading weights:  82%|████████▏ | 112/136 [00:00<00:00, 368.52it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 421.85it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+验证集 23953 条，其中被截断 7144 条 (29.8%)
+  A_开头: 全体验证 0.8296 | 仅长文本 0.8237
+  B_前+后: 全体验证 0.8292 | 仅长文本 0.8282
+
+差值：全体 -0.0003 | 长文本 +0.0044

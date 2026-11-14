@@ -1,0 +1,12 @@
+device=cuda | train 96993 | val 23953 → K=2 10926
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 30/136 [00:00<00:00, 296.10it/s]Loading weights:  45%|████▍     | 61/136 [00:00<00:00, 299.05it/s]Loading weights:  67%|██████▋   | 91/136 [00:00<00:00, 292.94it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 369.72it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.

@@ -1,0 +1,11 @@
+{
+  "rows": 120946,
+  "prompts": 43554,
+  "labels": 18,
+  "median_words": 479.0,
+  "prompts_ge2": 4375,
+  "prompts_18": 1260,
+  "folds": 5,
+  "min_words": 40,
+  "max_words": 2000
+}

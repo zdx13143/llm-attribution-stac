@@ -1,0 +1,55 @@
+device=cuda | train 96993 | val 23953 → K=2 10926 | steps 3600 | s=30.0 m=0.3
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights:  25%|██▌       | 34/136 [00:00<00:00, 314.22it/s]Loading weights:  50%|█████     | 68/136 [00:00<00:00, 321.83it/s]Loading weights:  74%|███████▍  | 101/136 [00:00<00:00, 289.18it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 381.81it/s]
+[transformers] [1mModernBertForSequenceClassification LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     | 
+------------------+------------+-
+decoder.bias      | UNEXPECTED | 
+classifier.weight | MISSING    | 
+classifier.bias   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+已开启梯度检查点
+已热启动骨干：data/research/ckpt/f0_L1024_step
+C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\src\research\train_arcface.py:190: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.scale(loss).backward(); scaler.step(opt); scaler.update(); sched.step()
+  1/3600 loss 11.9765 3.52s/step eta 211min 1.2GB
+  100/3600 loss 10.3783 2.77s/step eta 161min 2.3GB
+  200/3600 loss 18.2086 2.75s/step eta 156min 2.3GB
+  300/3600 loss 5.8572 2.77s/step eta 152min 2.3GB
+  400/3600 loss 11.2300 2.77s/step eta 148min 2.3GB
+  500/3600 loss 4.6138 2.76s/step eta 142min 2.3GB
+  600/3600 loss 9.2383 2.78s/step eta 139min 2.3GB
+  700/3600 loss 4.4089 2.77s/step eta 134min 2.3GB
+  800/3600 loss 8.6488 2.76s/step eta 129min 2.3GB
+  900/3600 loss 4.0411 2.77s/step eta 124min 2.3GB
+  1000/3600 loss 8.4796 2.77s/step eta 120min 2.3GB
+  1100/3600 loss 3.9474 2.77s/step eta 115min 2.3GB
+  1200/3600 loss 7.7514 2.78s/step eta 111min 2.3GB
+  1300/3600 loss 3.7285 2.78s/step eta 106min 2.3GB
+  1400/3600 loss 7.2667 2.78s/step eta 102min 2.3GB
+  1500/3600 loss 3.6483 2.76s/step eta 97min 2.3GB
+  1600/3600 loss 6.7850 2.73s/step eta 91min 2.3GB
+  1700/3600 loss 3.3012 2.71s/step eta 86min 2.3GB
+  1800/3600 loss 6.4495 2.69s/step eta 81min 2.3GB
+  1900/3600 loss 3.2626 2.67s/step eta 76min 2.3GB
+  2000/3600 loss 6.2672 2.65s/step eta 71min 2.3GB
+  2100/3600 loss 2.8628 2.63s/step eta 66min 2.3GB
+  2200/3600 loss 5.8668 2.62s/step eta 61min 2.3GB
+  2300/3600 loss 2.9422 2.60s/step eta 56min 2.3GB
+  2400/3600 loss 6.1614 2.59s/step eta 52min 2.3GB
+  2500/3600 loss 2.7941 2.58s/step eta 47min 2.3GB
+  2600/3600 loss 5.5056 2.57s/step eta 43min 2.3GB
+  2700/3600 loss 2.7262 2.56s/step eta 38min 2.3GB
+  2800/3600 loss 5.4536 2.55s/step eta 34min 2.3GB
+  2900/3600 loss 2.5261 2.55s/step eta 30min 2.3GB
+  3000/3600 loss 4.7729 2.54s/step eta 25min 2.3GB
+  3100/3600 loss 2.7618 2.53s/step eta 21min 2.3GB
+  3200/3600 loss 5.2983 2.52s/step eta 17min 2.3GB
+  3300/3600 loss 2.4465 2.52s/step eta 13min 2.3GB
+  3400/3600 loss 4.7102 2.51s/step eta 8min 2.3GB
+  3500/3600 loss 2.2176 2.51s/step eta 4min 2.3GB
+  3600/3600 loss 4.5062 2.50s/step eta 0min 2.3GB
+已保存最终权重 → C:\Users\Administrator\WorkBuddy\2026-10-16-21-56-59\name-that-llm\data\research\ckpt\f0_arc3600_final
+跳过评估（--no-eval），请用 eval_arc.py 单独打分
